@@ -13,3 +13,13 @@ variable subnet_id {
     default = "fdsfds"
 }
 
+variable nsg_name {
+    type = string
+    default = "testnsg"
+}
+
+variable nsr_name {
+    type = string
+    default = "testnsr"
+}
+
