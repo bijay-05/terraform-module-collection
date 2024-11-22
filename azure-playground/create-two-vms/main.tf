@@ -29,7 +29,7 @@ resource "azurerm_subnet" "testsubnet" {
 }
 
 module "network_security" {
-    source = "../azure/vm_network_security"
+    source = "../../azure/vm_network_security"
     rg_name = azurerm_resource_group.testrg.name
     rg_location = azurerm_resource_group.testrg.location
     subnet_id = azurerm_subnet.testsubnet.id
@@ -38,7 +38,7 @@ module "network_security" {
 }
 
 module "network_interface_a" {
-    source = "../azure/vm_network_interface"
+    source = "../../azure/vm_network_interface"
     rg_name = azurerm_resource_group.testrg.name
     rg_location = azurerm_resource_group.testrg.location
     ip_name = "devtestipa"
@@ -47,7 +47,7 @@ module "network_interface_a" {
 }
 
 module "network_interface_b" {
-    source = "../azure/vm_network_interface"
+    source = "../../azure/vm_network_interface"
     rg_name = azurerm_resource_group.testrg.name
     rg_location = azurerm_resource_group.testrg.location
     ip_name = "devtestipb"
@@ -56,7 +56,7 @@ module "network_interface_b" {
 }
 
 module "linux_vm_a" {
-    source = "../azure/linuxvm"
+    source = "../../azure/linuxvm"
     rg_name = azurerm_resource_group.testrg.name
     rg_location = azurerm_resource_group.testrg.location
     vm_name = "devtestvma"
@@ -66,7 +66,7 @@ module "linux_vm_a" {
 }
 
 module "linux_vm_b" {
-    source = "../azure/linuxvm"
+    source = "../../azure/linuxvm"
     rg_name = azurerm_resource_group.testrg.name
     rg_location = azurerm_resource_group.testrg.location
     vm_name = "devtestvmb"
