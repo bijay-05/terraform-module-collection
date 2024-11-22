@@ -27,29 +27,4 @@ resource "azurerm_linux_virtual_machine" "testvm" {
     sku       = "22_04-lts"
     version   = "latest"
   }
-  connection {
-      type = "ssh"
-      user = var.admin_username
-      private_key = file("/path/to/local/private/ssh_keys")
-      host = self.public_ip_address
-  }
-
-  provisioner "local-exec" {
-    command = templatefile("linux-ssh-scripts.tftpl", {
-      hostname     = self.public_ip_address,
-      user         = var.admin_username,
-      identityfile = "/path/to/local/private/ssh_keys"
-    })
-    interpreter = ["bash", "-c"]
-  }
-  provisioner "file" {
-    source      = "./nvm-install.sh"
-    destination = "setup.sh"
-  }
-  provisioner "remote-exec" {
-    inline = [
-      "bash ~/setup.sh",
-      # "source ~/.bashrc" cannot perform this on script
-    ]
-  }
 }
