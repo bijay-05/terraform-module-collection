@@ -13,7 +13,7 @@ resource "azurerm_linux_virtual_machine" "testvm" {
 
   admin_ssh_key {
     username   = var.admin_username
-    public_key = file("/path/to/public/ssh-key")
+    public_key = file(var.public_key)
   }
 
   os_disk {

@@ -27,3 +27,8 @@ variable nic_id {
     type = string
     default = "fwsfs"
 }
+
+variable "public_key" {
+  type = string
+  default = "testvm.pub"
+}
