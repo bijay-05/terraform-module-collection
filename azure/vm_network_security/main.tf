@@ -13,7 +13,7 @@ resource "azurerm_network_security_rule" "testnsr" {
   priority                    = 100
   direction                   = "Inbound"
   access                      = "Allow"
-  protocol                    = "Ssh"
+  protocol                    = "Tcp"
   source_port_range           = "*"
   destination_port_range      = "22"
   source_address_prefix       = "*"
