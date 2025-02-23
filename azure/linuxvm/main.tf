@@ -22,9 +22,16 @@ resource "azurerm_linux_virtual_machine" "testvm" {
   }
 
   source_image_reference {
-    publisher = "Canonical"
-    offer     = "0001-com-ubuntu-server-jammy"
-    sku       = "22_04-lts"
+    publisher = "debian"
+    offer     = "debian-12"
+    sku       = "12"
     version   = "latest"
   }
+
+  # source_image_reference {
+  #   publisher = "Canonical"
+  #   offer     = "0001-com-ubuntu-server-jammy"
+  #   sku       = "22_04-lts"
+  #   version   = "latest"
+  # }
 }
