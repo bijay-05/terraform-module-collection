@@ -17,3 +17,8 @@ variable subnet_id {
     type = string
     default = "fewf"
 }
+
+variable ip_allocation_method {
+    type = string
+    default = "Dynamic"
+}

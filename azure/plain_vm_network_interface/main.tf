@@ -6,7 +6,7 @@ resource "azurerm_network_interface" "testnic" {
   ip_configuration {
     name                          = "internal"
     subnet_id                     = var.subnet_id
-    private_ip_address_allocation = "Dynamic"
+    private_ip_address_allocation = var.ip_allocation_method
   }
 
   tags = {
