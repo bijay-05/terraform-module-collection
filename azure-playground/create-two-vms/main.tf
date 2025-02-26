@@ -22,10 +22,6 @@ resource "azurerm_subnet" "testsubnet" {
     resource_group_name = azurerm_resource_group.testrg.name
     virtual_network_name = azurerm_virtual_network.testvnet.name
     address_prefixes = ["10.123.1.0/24"]
-
-    tags = {
-        environment = "dev"
-    }
 }
 
 module "network_security" {
